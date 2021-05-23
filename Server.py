@@ -1,9 +1,7 @@
-# Gelek Wangyal
-# gmwth5
-# 14273388
-# 4/13/127
 # This is a simple socket program written
 # in Python using the Socket API
+
+#server file
 
 import socket
 import sys
@@ -68,35 +66,7 @@ def logout():
         clientsocket.send(bytes(str(current_user) + ' left.', 'utf-8'))
         current_user = None
         logged_in = 0
-
-
-# socket_list =  [socket.socket(), s]
-# Below is a method I tried to use to get the infinite client/server loops going.
-# I originally couldn't figure out why the loop was breaking after 1 to 2 messages
-# So I used this method I found online to try and see if it worked, and it actually
-# crashed the entire program. I later figured out because to keep the loop going, all
-# I had to do was make sure that something was sent back and forth every time, and it felt
-# good to figure it out on my own without an internet solution to the problem. I just wanted
-# to keep it here to mark my progress with obstacles during the project though.
-'''while 1:
-    sock_read, sock_write, error = select.select(socket_list, [], [])
-
-    for sock in sock_read:
-        #accepts new connection from user
-        if sock == s:
-            clientsocket, address = s.accept()
-            clientsocket.send(bytes("My chatroom client. Version One.\n", "utf-8"))
-
-        else:
-            #recieve input from user
-            data = clientsocket.recvfrom(BUFFER)
-            (messageData, addess) = data
-            message = messageData.decode("utf-8")
-            argument = message.split()[0]
-
-            if(argument == 'newuser'):
-                newuser(message.split()[1], message.split()[2])
-'''
+        
 # accept client and send a success message
 
 
